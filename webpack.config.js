@@ -3,7 +3,7 @@ const MomentLocalesPlugin = require("moment-locales-webpack-plugin");
 const PugPlugin = require("pug-plugin");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: "/src/index.js",
   output: {
     filename: "index.js",
     path: path.resolve(__dirname, "dist"),
