@@ -1,4 +1,4 @@
-import { subreddit } from "./subreddit";
+import { subreddit } from "/subreddit";
 
 window.onload = () => {
   const queryString = window.location.search;
