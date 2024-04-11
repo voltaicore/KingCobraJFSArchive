@@ -26,7 +26,7 @@ export const subreddit = {
   $el: (() => {
     const a = document.createElement("div");
     a.id = "submission";
-    a.innerHTML = "Loading Submission/Comments or you haven't done a search yet.";
+    a.innerHTML = "Latest posts are shown by leaving all fields blank and submitting a query.";
     return a;
   })(),
   requestCount: 0,
