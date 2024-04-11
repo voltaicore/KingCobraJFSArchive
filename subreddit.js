@@ -19,9 +19,9 @@ export const subreddit = {
       "https://api.pullpush.io/reddit/comment/search?sort=asc&limit=1000&link_id=",
   },
   template: {
-    submissionCompiled: require("./submission.pug"),
-    postCompiled: require("./post.pug"),
-    profilePostCompiled: require("./profilePost.pug"),
+    submissionCompiled: require("./templates/submission.pug"),
+    postCompiled: require("./templates/post.pug"),
+    profilePostCompiled: require("./templates/profilePost.pug"),
   },
   $el: (() => {
     const a = document.createElement("div");
