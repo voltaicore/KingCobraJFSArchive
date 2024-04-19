@@ -37,4 +37,4 @@ Clears all search fields and search results. Defaults search fields back to page
 If filtering by submissions the comments related to each post will be shown as a hyperlinked numerical value of comments  (0 Comments, 10 Comments, 300 Comments, etc.) above the body of the submission. After clicking the comments of a submission press your browswers back button to return to the list of submission search results.
 <br></br>
 <br></br>
-Text submssions will show a broken media file icon in listed search results
+Text submssions will show a broken media file icon in listed search results.
