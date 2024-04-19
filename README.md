@@ -1,5 +1,7 @@
 About r/KingCobraJFS Archive
 <br></br>
+Go to: voltaicore.github.io/kingcobrajfsarchive/ to use the archive
+<br></br>
     This repo is a clone of https://github.com/ihsoyCT/ctarchive that has been stripped down to only query the KingCobraJFS subreddit. It is still possible to query other subreddits by adjusting the subreddit in the URL.
 <p>
 <b><br>How To Use: </br></b>
