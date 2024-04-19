@@ -58,7 +58,6 @@ export const subreddit = {
           subreddit.$el.innerHTML += subreddit.template.submissionCompiled(sub);
           subreddit.last = sub;
         });
-        console.log(e.data.data);
         subreddit.changeStatus("Submissions Loaded");
       })
       .catch((e) => {
