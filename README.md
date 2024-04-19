@@ -1,7 +1,9 @@
-This repo is a clone of https://github.com/ihsoyCT/ctarchive that has been stripped down to only query the KingCobraJFS subreddit. It is still possible to query other subreddits by adjusting the subreddit in the URL.
-
+About r/KingCobraJFS Archive
+<br></br>
+    This repo is a clone of https://github.com/ihsoyCT/ctarchive that has been stripped down to only query the KingCobraJFS subreddit. It is still possible to query other subreddits by adjusting the subreddit in the URL.
+<p>
 <b><br>How To Use: </br></b>
-Submit a query using the search fields and dropdown menu filters and press 'Submit Query'. Query results will be listed below the query field. Leaving the search fields empty will either return highest or lowest values based on the dropdown menu selections. the most recent or earliest (if 'Sort Type: Time' and ascending or descending selected) comments or submissions (based on 'Comments/Submissions' selection), the most upvoted or downvoted (if 'Sort Type: Score'), or most/least comments (if 'Sort Type: Comments'). The 'Clear' button will clear search results and query search fields.
+Submit a query using the search fields and dropdown menu filters and press 'Submit Query'. Query results will be listed below the query field. Leaving the search fields empty will either return highest or lowest values based on the dropdown menu selections.
 <br></br>
 <b>Comments/Submissions:</b>
 This will filter either posts made to the subreddit or a comments within the posts on the subreddit. If 'Submissions' is selected the comments to the submission results will be shown under each post as a hyperlinked numerical value of comments the post had received (0 Comments, 1 Comments, etc.).
@@ -32,9 +34,9 @@ Filters keywords in the title or body of a submission or comment.
 <br></br>
 <b>Clear:</b>
 Clears all search fields and search results. Defaults search fields back to page default.
-<br></br>
-<br></br>
+</p>
+
 If filtering by submissions the comments related to each post will be shown as a hyperlinked numerical value of comments  (0 Comments, 10 Comments, 300 Comments, etc.) above the body of the submission. After clicking the comments of a submission press your browswers back button to return to the list of submission search results.
-<br></br>
+
 <br></br>
 Text submssions will show a broken media file icon in listed search results.
