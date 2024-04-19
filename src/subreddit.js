@@ -1,4 +1,3 @@
-@ -1,177 +1,178 @@
 const axios = require("axios").default;
 const moment = require("moment");
 const marked = require("marked");
@@ -9,14 +8,11 @@ function base10to36(number) {
 
 export const subreddit = {
   link: {
-    submission:
-      "https://api.pullpush.io/reddit/search/submission/?test",
+    submission: "https://api.pullpush.io/reddit/search/submission/?test",
     commentsID: "https://api.pushshift.io/reddit/submission/comment_ids/",
     comments: "https://api.pushshift.io/reddit/search/comment?filter=id,author,parent_id,score,body,created_utc&ids=",
-    commentSearch:
-      "https://api.pullpush.io/reddit/search/comment/?test",
-    commentsBackup:
-      "https://api.pullpush.io/reddit/comment/search?sort=asc&limit=1000&link_id=",
+    commentSearch: "https://api.pullpush.io/reddit/search/comment/?test",
+    commentsBackup: "https://api.pullpush.io/reddit/comment/search?sort=asc&limit=1000&link_id=",
   },
   template: {
     submissionCompiled: require("./templates/submission.pug"),
@@ -38,8 +34,7 @@ export const subreddit = {
   createRequest(urlParams) {
     let query = [];
     urlParams.forEach((p, k) => {
-      if ((k === "since" || k === "until") && p !== "") {
-      if ((k === "since" || k === "until"|| k === "before" || k === "after") && p !== "") {
+      if ((k === "since" || k === "until" || k === "before" || k === "after") && p !== "") {
         p = Math.floor(new Date(p).getTime() / 1000);
       }
       if (p !== "" && k !== "mode") query.push(k + "=" + p);
@@ -54,17 +49,17 @@ export const subreddit = {
       .get(subreddit.link.submission + "&" + request)
       .then((e) => {
         subreddit.$el.innerHTML = "";
-        e.data.data
-          .forEach((sub) => {
-            sub.time = moment.unix(sub.created_utc).format("llll");
-            const imagetypes = ["jpg", "png", "gif"];
-            if (imagetypes.includes(sub.url.split(".").pop())) sub.thumbnail = sub.url;
-            subreddit.$el.innerHTML += subreddit.template.submissionCompiled(sub);
-            subreddit.last = sub;
-          })
-          .then(() => {
-            subreddit.changeStatus("Submissions Loaded");
-          });
+
+        e.data.data.forEach((sub) => {
+          sub.time = moment.unix(sub.created_utc).format("llll");
+          const imagetypes = ["jpg", "png", "gif"];
+          if (imagetypes.includes(sub.url.split(".").pop())) sub.thumbnail = sub.url;
+          debugger;
+          subreddit.$el.innerHTML += subreddit.template.submissionCompiled(sub);
+          subreddit.last = sub;
+        });
+        console.log(e.data.data);
+        subreddit.changeStatus("Submissions Loaded");
       })
       .catch((e) => {
         console.log(e);
@@ -116,7 +111,7 @@ export const subreddit = {
   },
   async loadCommentsBackup(id, highlight, created_utc = null) {
     subreddit.changeStatus("Loading Comments (Backup)");
-    let url = subreddit.link.commentsBackup + parseInt(id, 36);
+    // let url = subreddit.link.commentsBackup + parseInt(id, 36);
     let url = subreddit.link.commentsBackup + id;
     if (created_utc !== null) {
       url += "&since=" + (created_utc + 1);
@@ -159,7 +154,7 @@ export const subreddit = {
           last = post;
         });
         console.log("LAST", last);
-        if (last !== null) {
+
         if (last !== null && last.created_utc != created_utc) {
           subreddit.loadCommentsBackup(id, highlight, last.created_utc);
         } else {
